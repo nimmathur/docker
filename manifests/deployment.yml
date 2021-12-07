@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: nimmathurdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nimmathurdocker
+  template:
+    metadata:
+      labels:
+        app: nimmathurdocker 
+    spec:
+      containers:
+        - name: nimmathurdocker 
+          image: demoaks101.azurecr.io/nimmathurdocker
+          ports:
+          - containerPort: 80
